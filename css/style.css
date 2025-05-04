@@ -1,0 +1,408 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+    --dkbrown: #351710;
+    --offwhite:#ede4d7;
+    --yellow:#DBB949;
+    --teal:#39c5ab;
+    --dkteal:#1d9e87;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* generic styles for the page */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    /* background-color: var(--offwhite); */
+    background: linear-gradient(to bottom, var(--offwhite), #f0eadc);
+    color: var(--dkbrown);
+    font-size: var(--font-size);
+    opacity: 0;
+    animation: fadeIn 0.85s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+a {
+    color: var(--yellow);
+}
+a:hover {
+    color: var(--teal);
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+/* background color divs */
+.section-plum {
+    background-color: var(--plum);
+}
+
+.projects-section {
+
+}
+
+.gradient {
+    background: linear-gradient(90deg, rgba(29, 158, 135, 1), #dbb94910 75%);
+    height: 2px;
+}
+/* intro styles */
+#intro {
+    padding: 4rem 1rem 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#skillsTagline{
+    margin-top:1.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: -1rem; /* Adjust this value as needed */
+}
+
+
+.name span {
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: var(--dkteal);
+    display: block;
+    font-weight: 300;
+}
+
+#intro h2 {
+    font-size: 2rem;
+}
+
+/* contact styles */
+
+#contact {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+#contact p:last-child {
+    margin-top: 3rem;
+}
+#intro p:nth-child(1) { 
+    margin-bottom: 0.2em; /* Adjust this value as needed */
+  }
+
+
+/* navbar */
+
+nav {
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 1rem;
+}
+
+ nav h1 a {
+    font-family: var(--sans);
+ }
+
+ nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+ }
+
+ nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+ }
+
+ nav [class*="fa-"] {
+    font-size: 150%;
+    color: var(--dkteal);
+ }
+
+ nav h1 [class*="fa-"] {
+     font-size: 100%;
+     color: var(--dkteal);
+ }
+
+ nav a {
+    color: var(--dkbrown);
+    text-decoration: none;
+    display: block;
+ }
+
+ nav a:hover,
+ nav [class*="fa-"]:hover {
+    color: var(--yellow)
+ }
+
+ .button {
+    background-color: var(--yellow);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: var(--mono);
+    text-decoration: none;
+ }
+
+ .button:hover {
+    color: var(--dkbrown);
+    background-color: var(--teal);
+ }
+
+/* projects section */
+#projects {
+    padding: 4rem 1rem;
+    font: var(--sans);
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem *1.5);
+}
+
+#projects h3 {
+    color: var(--dkteal);
+}
+
+#projects h4 {
+    font-size: 1rem;
+    font-family: var(--mono);
+}
+/* Default .brownbox styles */
+.brownbox {
+    background: 
+        linear-gradient(to bottom right, rgba(58, 29, 22, 0.9), rgba(53, 23, 16, 0.9)), /* Base gradient */
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px), /* Subtle grid texture */
+        repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.03),
+            rgba(255, 255, 255, 0.03) 2px,
+            transparent 2px,
+            transparent 4px
+        ); /* Fibrous texture */
+    background-size: 10px 10px, 10px 10px, 5px 5px; /* Adjust texture sizes */
+    background-blend-mode: overlay; /* Blend the textures together */
+    border-radius: 15px;
+    padding: 2rem;
+    color: var(--teal);
+    font-size: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    transition: box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions */
+    position: relative;
+}
+
+/* Hover styles for larger screens */
+.brownbox:hover {
+    animation: pulse 1.5s infinite; /* Add pulse animation on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 10px var(--teal); /* Glow effect */
+    background: 
+        linear-gradient(to bottom right, rgba(58, 29, 22, 0.95), rgba(53, 23, 16, 0.95)), /* Darker gradient */
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px), /* Slightly more intense grid */
+        repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.05) 2px,
+            transparent 2px,
+            transparent 4px
+        ); /* Slightly more intense fibrous texture */
+    background-size: 10px 10px, 10px 10px, 5px 5px;
+    background-blend-mode: overlay;
+}
+
+/* Automatically apply hover styles on smaller screens */
+@media (max-width: 768px) {
+    .brownbox {
+        animation: pulse 1.5s infinite; /* Add pulse animation */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 10px var(--teal); /* Glow effect */
+        background: 
+            linear-gradient(to bottom right, rgba(58, 29, 22, 0.95), rgba(53, 23, 16, 0.95)), /* Darker gradient */
+            radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px), /* Slightly more intense grid */
+            repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.05),
+                rgba(255, 255, 255, 0.05) 2px,
+                transparent 2px,
+                transparent 4px
+            ); /* Slightly more intense fibrous texture */
+        background-size: 10px 10px, 10px 10px, 5px 5px;
+        background-blend-mode: overlay;
+    }
+
+    .tech-included {
+        display: none; /* Hide the heading */
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 5px var(--teal);
+    }
+    50% {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--teal);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 5px var(--teal);
+    }
+}
+
+#projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+    font-size: 1rem;
+}
+
+#projects img {
+    margin: 2rem 0 4rem 0;
+    border-left: 1px solid var(--dkteal);
+    border-top: 1px solid var(--dkteal);
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+h4.tech-included{
+    margin-bottom: 1.5rem
+}
+/* Style for the tech-stack container */
+ul.tech-stack {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 5rem 0 1.5rem 0; /* Add spacing around the list, including more upper margin */
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 0.5rem; /* Add spacing between items */
+
+}
+
+/* Style for individual tech tags */
+.tech-tag {
+    background-color: var(--teal); /* Keep the teal background */
+    color: var(--offwhite); /* Ensure good contrast with the text */
+    font-size: 0.9rem; /* Slightly smaller font size for compactness */
+    padding: 0.4rem 0.8rem; /* Add more padding for better readability */
+    border-radius: 8px; /* Slightly more rounded corners for a modern look */
+    font-weight: 500; /* Keep the text bold for emphasis */
+    text-align: center; /* Center-align text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    letter-spacing: 0.5px; /* Add slight spacing between letters */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for tech tags */
+.tech-tag:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    background-color: var(--dkteal); /* Slightly darker teal on hover */
+}
+ /* footer section*/
+
+ footer {
+     text-align: center;
+     padding: 4rem 0;
+ }
+
+ footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 3rem;
+ }
+
+ @media (min-width: 550px) {
+    article {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1rem;
+    }
+    #projects img {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+    .text {
+        grid-column: 5/11;
+        grid-row: 1/2;
+        order: 2;
+        text-align: right;
+    }
+    #projects ul {
+        justify-content: end;
+    }
+    #projects .reverse .text {
+        grid-column: 1/7;
+        order: 2;
+        text-align: left;
+    }
+
+    #projects .reverse img {
+            grid-column: 6/11;
+            grid-row: 1/2;
+    }
+
+    #projects .reverse ul {
+        justify-content: flex-start;
+    }
+ }
+
+ @media (min-width: 850px) {
+    #projects {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+ }
+
+
+
