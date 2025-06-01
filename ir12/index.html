@@ -3,28 +3,991 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Webpage</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Innovative Rehab12 - Pathways to Lasting Change Through Emotional Awareness Therapy & Diversion Programs.">
+    <title>Innovative Rehab12 | Pathways to Lasting Change</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #4299e1;
+            --dark: #1a202c;
+            --light: #f7fafc;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Professional Navy/Gold Theme */
+        .theme-1 {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #d4af37;
+            --text: #1a202c;
+            --light: #f7fafc;
+        }
+        
+        /* Dark Blue/Copper Theme */
+        .theme-2 {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #b87333;
+            --text: #2c3e50;
+            --light: #ecf0f1;
+        }
+        
+        /* Slate Blue/Bronze Theme */
+        .theme-3 {
+            --primary: #1a5276;
+            --secondary: #2874a6;
+            --accent: #cd7f32;
+            --text: #154360;
+            --light: #eaf2f8;
+        }
+        
+        /* Charcoal/Gold Theme */
+        .theme-4 {
+            --primary: #36454F;
+            --secondary: #536878;
+            --accent: #FFD700;
+            --text: #2c3e50;
+            --light: #f8f9fa;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.9) 0%, rgba(var(--secondary-rgb), 0.8) 100%);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Modern header styles */
+        .header-blur {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .header-dark {
+            background-color: rgba(15, 23, 42, 0.9);
+        }
+        
+        /* Abstract shape for hero section */
+        .abstract-shape {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            opacity: 0.15;
+            filter: blur(60px);
+            z-index: 0;
+        }
+        
+        /* Modern logo design */
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            margin-right: 10px;
+        }
+        
+        /* Theme toggle button */
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+        
+        /* Modern button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Floating particles for hero */
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        /* Professional badge */
+        .badge {
+            display: inline-block;
+            padding: 0.35em 0.65em;
+            font-size: 0.75em;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25rem;
+            background-color: var(--accent);
+        }
+        
+        /* Dynamic accent highlights */
+        .accent-text {
+            color: var(--accent);
+        }
+        
+        .accent-border {
+            border-color: var(--accent);
+        }
+        
+        .accent-bg {
+            background-color: var(--accent);
+        }
+        
+        /* Court certification badge */
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .certification-badge i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+
+        /* Modal specific styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--light);
+            margin: auto;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            position: relative;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .modal-close {
+            color: var(--dark);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Webpage</h1>
-    </header>
-    <section>
-        <h2>Section 1</h2>
-        <p>This is the first section of the webpage.</p>
+<body class="antialiased theme-1">
+    <div class="fixed bottom-6 right-6 z-50 flex space-x-2">
+        <div class="theme-toggle bg-blue-900 shadow-md ring-2 ring-white ring-offset-2" data-theme="theme-1" title="Navy/Gold">
+            <i class="fas fa-palette text-white"></i>
+        </div>
+        <div class="theme-toggle bg-blue-800 shadow-md" data-theme="theme-2" title="Blue/Copper">
+            <i class="fas fa-palette text-white"></i>
+        </div>
+        <div class="theme-toggle bg-blue-700 shadow-md" data-theme="theme-3" title="Slate/Bronze">
+            <i class="fas fa-palette text-white"></i>
+        </div>
+        <div class="theme-toggle bg-gray-700 shadow-md" data-theme="theme-4" title="Charcoal/Gold">
+            <i class="fas fa-palette text-white"></i>
+        </div>
+    </div>
+
+    <nav class="fixed w-full header-blur shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center text-2xl font-bold">
+                        <div class="logo-mark">IR</div>
+                        <span style="color: var(--primary);">Innovative</span>
+                        <span class="accent-text">Rehab12</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Home</a>
+                        <a href="#about" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">About</a>
+                        <a href="#programs" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Programs</a>
+                        <a href="#testimonials" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Success Stories</a>
+                        <a href="#contact" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Contact</a>
+                    </div>
+                    <a href="#contact" class="ml-8 px-6 py-2 rounded-full font-semibold transition-all duration-300 btn-primary">
+                        Get Started
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md hover:bg-gray-100 focus:outline-none">
+                        <svg class="h-6 w-6" style="color: var(--primary);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu hidden md:hidden fixed inset-0 z-40 bg-white mt-20">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50" style="color: var(--primary);">Home</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50" style="color: var(--primary);">About</a>
+            <a href="#programs" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50" style="color: var(--primary);">Programs</a>
+            <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50" style="color: var(--primary);">Success Stories</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-50" style="color: var(--primary);">Contact</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium btn-primary text-white mt-4 text-center">
+                Get Started
+            </a>
+        </div>
+    </div>
+
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden" style="background-color: var(--light);">
+        <div class="abstract-shape" style="top: -200px; right: -200px;"></div>
+        <div class="abstract-shape" style="bottom: -150px; left: -150px; transform: rotate(45deg);"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0 fade-in">
+                    <div class="certification-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span class="font-medium" style="color: var(--primary);">Trusted by Restorative Justice Leaders</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" style="color: var(--text);">
+                        <span class="accent-text">Heal. Grow. Thrive.</span> Building Stronger Communities Through Awareness.
+                    </h1>
+                    <p class="text-lg mb-8 max-w-lg" style="color: var(--text); opacity: 0.9;">
+                        Our evidence-based programs empower individuals with deep self-awareness, leading to lasting change and stronger communities.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#programs" class="px-8 py-3 font-semibold rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-center btn-primary">
+                            Explore Programs
+                        </a>
+                        <a href="#contact" class="px-8 py-3 bg-white hover:bg-gray-100 font-semibold rounded-lg shadow-lg transition duration-300 text-center accent-border" style="color: var(--primary); border: 2px solid;">
+                            Contact Us
+                        </a>
+                    </div>
+                    
+                    <div class="mt-10 flex items-center space-x-6">
+                        <div class="flex -space-x-2">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://placehold.co/40x40/cccccc/ffffff?text=P1" alt="Client 1">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://placehold.co/40x40/cccccc/ffffff?text=P2" alt="Client 2">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://placehold.co/40x40/cccccc/ffffff?text=P3" alt="Client 3">
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium" style="color: var(--text);">Join <span class="font-bold">Hundreds</span> on Their Journey</p>                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="floating">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white opacity-50 rounded-xl"></div>
+                            <div class="relative bg-white p-1 rounded-xl shadow-2xl overflow-hidden">
+                                <div class="h-64 w-full bg-gradient-to-br from-blue-800 to-blue-600 flex items-center justify-center">
+                                    <i class="fas fa-scale-balanced text-white text-8xl opacity-50"></i>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2" style="color: var(--text);">Proven Pathways to Progress</h3>
+                                    <p class="text-sm" style="color: var(--text); opacity: 0.8;">Backed by restorative justice leaders, our programs balance healing with accountability.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 bg-white p-4 rounded-lg shadow-lg hidden md:block" style="border: 1px solid rgba(0,0,0,0.05);">
+                        <div class="flex items-center">
+                            <div class="p-2 rounded-full mr-3 accent-bg text-white">
+                                <i class="fas fa-graduation-cap text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold" style="color: var(--text);">Expert Guides</p>
+                                <p class="text-sm" style="color: var(--text); opacity: 0.7;">Dedicated to your growth</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-8 -right-8 bg-white p-4 rounded-lg shadow-lg hidden md:block" style="border: 1px solid rgba(0,0,0,0.05);">
+                        <div class="flex items-center">
+                            <div class="p-2 rounded-full mr-3" style="background-color: var(--primary); color: white;">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold" style="color: var(--text);">Real-World Impact</p>
+                                <p class="text-sm" style="color: var(--text); opacity: 0.7;">Shaping brighter futures for all</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section>
-        <h2>Section 2</h2>
-        <p>This is the second section of the webpage.</p>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge mb-4">Our Approach</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text);">
+                    Our Core: <span class="accent-text inline-block">Building Resilience</span> and Lasting Change
+                </h2>      
+                <p class="text-lg max-w-3xl mx-auto" style="color: var(--text); opacity: 0.9;">
+                    We champion a holistic path to rehabilitation, rooted in the human capacity for growth. Our BPH-recognized programs empower individuals with essential tools to navigate life's complexities.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300" style="border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 accent-bg text-white">
+                        <i class="fas fa-gavel text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Restorative Justice & Community Healing</h3>
+                    <p class="opacity-80" style="color: var(--text);">
+                        Our programs drive restorative diversion and rehabilitation. We prioritize healing, accountability, and the vital work of rebuilding families and strengthening communities.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300" style="border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6" style="background-color: var(--secondary); color: white;">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Cognitive Behavioral Growth</h3>
+                    <p class="opacity-80" style="color: var(--text);">
+                        Utilizing proven cognitive behavioral strategies, we guide participants to transform negative thought patterns into constructive responses, building lasting inner strength.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300" style="border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 accent-bg text-white">
+                        <i class="fas fa-user-shield text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Empowering Accountability & Growth</h3>
+                    <p class="opacity-80" style="color: var(--text);">
+                        Our framework cultivates personal responsibility, equipping individuals with essential emotional tools for a positive and stable life trajectory.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
-    <section>
-        <h2>Section 3</h2>
-        <p>This is the third section of the webpage.</p>
+
+    <section id="programs" class="py-20" style="background-color: var(--light);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge mb-4">Our Transformative Programs</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text);">Pathways to <span class="accent-text">Empowerment</span> and <span class="accent-text">Community</span> Well-being</h2>
+                <p class="text-lg max-w-3xl mx-auto" style="color: var(--text); opacity: 0.9;">
+                    Discover programs dedicated to fostering profound personal growth. In our supportive environments, individuals build crucial emotional intelligence and coping skills, paving the way for a more fulfilling life.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary), var(--accent));">
+                        <i class="fas fa-balance-scale text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Restorative Diversion Initiative</h3>
+                        <p class="mb-6 opacity-80" style="color: var(--text);">
+                            A compassionate alternative to punitive measures, this initiative unites families and communities in a healing, restorative process. We partner with progressive justice systems to foster accountability, growth, and stronger community ties.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">Aligned with restorative principles</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">Focus on victim-offender dialogue (where appropriate)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">Supports community reintegration</span>
+                            </li>
+                        </ul>
+                        <button class="llm-learn-more inline-block px-6 py-2 font-medium rounded-full transition duration-300" style="background-color: var(--primary); color: white; border: 1px solid var(--primary);" data-program="Restorative Diversion Initiative">
+                            ✨ Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, var(--secondary), var(--accent));">
+                        <i class="fas fa-brain text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--text);">In-Prison Cognitive Transformation</h3>
+                        <p class="mb-6 opacity-80" style="color: var(--text);">
+                            Empowering incarcerated individuals, our proven in-prison programs guide deep self-reflection and challenge existing thought patterns. We foster emotional resilience, essential for a successful return to society.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">Evidence-based curriculum for proven results</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">Tailored for correctional environments</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">Focus on post-release preparedness</span>
+                            </li>
+                        </ul>
+                        <button class="llm-learn-more inline-block px-6 py-2 font-medium rounded-full transition duration-300" style="background-color: var(--secondary); color: white; border: 1px solid var(--secondary);" data-program="In-Prison Cognitive Transformation">
+                            ✨ Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-48 flex items-center justify-center" style="background: linear-gradient(135deg, var(--accent), var(--primary));">
+                        <i class="fas fa-users text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Youth & Community Healing Circles</h3>
+                        <p class="mb-6 opacity-80" style="color: var(--text);">
+                            These restorative circles provide a vital alternative to traditional disciplinary actions in schools. Collaborating with school boards and youth services, we guide young people toward empathy, conflict resolution, and positive peer connections.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">School-based youth engagement</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">Focus on conflict resolution and empathy</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2 accent-text"></i>
+                                <span style="color: var(--text);">Reduces reliance on punitive measures</span>
+                            </li>
+                        </ul>
+                        <button class="llm-learn-more inline-block px-6 py-2 font-medium rounded-full transition duration-300 accent-bg text-white border border-transparent" data-program="Youth & Community Healing Circles">
+                            ✨ Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2025 Green Mango Labs</p>
+
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge mb-4">Voices of Transformation</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text);">Inspiring Journeys of <span class="accent-text">Renewal</span> and <span class="accent-text">Hope</span></h2>
+                <p class="text-lg max-w-3xl mx-auto" style="color: var(--text); opacity: 0.9;">
+                    Real stories, real impact. Hear from individuals who've embraced our programs, found compassionate guidance, and forged new paths. Their journeys illuminate the power of second chances and the strength of self-discovery.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl" style="border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/64x64/cccccc/ffffff?text=CJ" alt="Craig J." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold" style="color: var(--text);">Craig J.</h4>
+                            <p class="text-sm opacity-70" style="color: var(--text);">Completed Program: 2022</p>
+                        </div>
+                    </div>
+                    <p class="mb-6 opacity-80" style="color: var(--text);">
+                        "This program truly opened my eyes. The insights I gained helped me understand my reactions and build healthier ways to respond. I'm now able to pause and think before reacting."
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl" style="border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/64x64/cccccc/ffffff?text=MT" alt="Mary T." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold" style="color: var(--text);">Mary T.</h4>
+                            <p class="text-sm opacity-70" style="color: var(--text);">Completed Program: 2021</p>
+                        </div>
+                    </div>
+                    <p class="mb-6 opacity-80" style="color: var(--text);">
+                        "This program gave me tools I still use every day. The group sessions were particularly helpful - hearing others' experiences made me feel less alone."
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl" style="border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/64x64/cccccc/ffffff?text=SL" alt="Stuart L." class="w-full h-full object-cover"> </div>
+                        <div>
+                            <h4 class="font-bold" style="color: var(--text);">Stuart L.</h4>
+                            <p class="text-sm opacity-70" style="color: var(--text);">Completed Program: 2023</p>
+                        </div>
+                    </div>
+                    <p class="mb-6 opacity-80" style="color: var(--text);">
+                        "The counselors were knowledgeable and compassionate. They helped me see how my thought patterns were affecting my behavior and gave me practical ways to change."
+                    </p>
+                    <div class="flex">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge mb-4">FAQs</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text);">Frequently Asked Questions</h2>
+                <p class="text-lg max-w-3xl mx-auto" style="color: var(--text); opacity: 0.9;">
+                    Get answers to common questions about our court-certified rehabilitation programs.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="border rounded-xl overflow-hidden" style="border-color: rgba(0,0,0,0.05);">
+                        <button class="faq-question w-full px-6 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none transition duration-300 flex justify-between items-center" style="color: var(--text);">
+                            <span>Are your programs certified by the court system?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300 accent-text" style="transform: rotate(0deg);"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 hidden">
+                            <p class="opacity-80" style="color: var(--text);">
+                                Yes, our programs are fully certified and approved by local courts as valid alternatives to traditional sentencing. We work closely with legal professionals to ensure our curriculum meets all necessary requirements while focusing on meaningful rehabilitation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="border rounded-xl overflow-hidden" style="border-color: rgba(0,0,0,0.05);">
+                        <button class="faq-question w-full px-6 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none transition duration-300 flex justify-between items-center" style="color: var(--text);">
+                            <span>How long do the programs typically last?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300 accent-text" style="transform: rotate(0deg);"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 hidden">
+                            <p class="opacity-80" style="color: var(--text);">
+                                Program duration varies based on individual needs and court requirements, but most of our rehabilitation programs range from 8 to 16 weeks. Each session builds on the previous one to ensure lasting behavioral change.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="border rounded-xl overflow-hidden" style="border-color: rgba(0,0,0,0.05);">
+                        <button class="faq-question w-full px-6 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none transition duration-300 flex justify-between items-center" style="color: var(--text);">
+                            <span>What qualifications do your counselors have?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300 accent-text" style="transform: rotate(0deg);"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 hidden">
+                            <p class="opacity-80" style="color: var(--text);">
+                                All our counselors are licensed professionals with specialized training in cognitive behavioral therapy and rehabilitation techniques. They have extensive experience working within the criminal justice system and understand the unique challenges participants face.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="border rounded-xl overflow-hidden" style="border-color: rgba(0,0,0,0.05);">
+                        <button class="faq-question w-full px-6 py-4 text-left font-medium hover:bg-gray-50 focus:outline-none transition duration-300 flex justify-between items-center" style="color: var(--text);">
+                            <span>Is there any follow-up after completing the program?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300 accent-text" style="transform: rotate(0deg);"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 hidden">
+                            <p class="opacity-80" style="color: var(--text);">
+                                Yes, we offer optional follow-up sessions and alumni resources to support ongoing behavioral growth. Many participants choose to attend monthly check-ins or join our alumni community for continued support and skill reinforcement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20" style="background-color: var(--light);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: var(--text);">Ready to Begin Your Rehabilitation Journey?</h2>
+                    <p class="text-lg mb-8 opacity-90" style="color: var(--text);">
+                        Contact us today to learn more about our court-certified programs and how we can help you or your client achieve positive behavioral change.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full flex items-center justify-center accent-bg text-white">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium" style="color: var(--text);">Our Location</h3>
+                                <p class="opacity-80" style="color: var(--text);">123 Rehabilitation Way, Suite 100<br>Justice City, JC 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: var(--secondary); color: white;">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium" style="color: var(--text);">Call Us</h3>
+                                <p class="opacity-80" style="color: var(--text);">(555) 123-4567<br>Mon-Fri, 9am-5pm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full flex items-center justify-center accent-bg text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium" style="color: var(--text);">Email Us</h3>
+                                <p class="opacity-80" style="color: var(--text);">info@innovativerehab12.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg" style="border: 1px solid rgba(0,0,0,0.05);">
+                    <h3 class="text-2xl font-bold mb-6" style="color: var(--text);">Send Us a Message</h3>
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium mb-2" style="color: var(--text);">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 transition duration-300" style="color: var(--text); focus:ring-color: var(--primary);" placeholder="John Doe">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium mb-2" style="color: var(--text);">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 transition duration-300" style="color: var(--text); focus:ring-color: var(--primary);" placeholder="john@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-sm font-medium mb-2" style="color: var(--text);">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 transition duration-300" style="color: var(--text); focus:ring-color: var(--primary);" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium mb-2" style="color: var(--text);">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 transition duration-300" style="color: var(--text); focus:ring-color: var(--primary);" placeholder="Tell us about your needs..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 font-semibold rounded-lg shadow-lg transition duration-300 transform hover:scale-[1.02] btn-primary">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="py-12" style="background-color: var(--dark); color: var(--light);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <a href="#" class="flex items-center text-2xl font-bold mb-4">
+                        <div class="logo-mark" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">IR</div>
+                        <span style="color: white;">Innovative</span>
+                        <span class="accent-text">Rehab12</span>
+                    </a>
+                    <p class="text-sm mb-6 opacity-80">
+                        Specialized rehabilitation programs focused on cognitive behavioral change and personal growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#programs" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Programs</a></li>
+                        <li><a href="#testimonials" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Success Stories</a></li>
+                        <li><a href="#contact" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4 text-white">Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Diversion Programs</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Cognitive Behavioral Therapy</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Group Counseling</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Anger Management</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4 text-white">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 opacity-80 accent-text"></i>
+                            <span class="opacity-80">123 Rehabilitation Way, Suite 100<br>Justice City, JC 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 opacity-80 accent-text"></i>
+                            <span class="opacity-80">(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 opacity-80 accent-text"></i>
+                            <span class="opacity-80">info@innovativerehab12.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="index.js"></script>
+
+    <div id="programDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 id="modalProgramTitle" class="text-2xl font-bold mb-4" style="color: var(--text);"></h3>
+            <div id="modalProgramContent" class="text-gray-700 space-y-4">
+                <div class="flex items-center justify-center h-32" id="modalLoadingSpinner">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-menu a');
+            const themeToggles = document.querySelectorAll('.theme-toggle');
+            const body = document.body;
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scroll for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80, // Adjust for fixed header height
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            // Theme toggle functionality
+            themeToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const theme = this.dataset.theme;
+                    body.className = `antialiased ${theme}`;
+
+                    // Update active state for theme toggles
+                    themeToggles.forEach(t => t.classList.remove('ring-2', 'ring-white', 'ring-offset-2'));
+                    this.classList.add('ring-2', 'ring-white', 'ring-offset-2');
+                });
+            });
+
+            // LLM Integration for Program Details
+            const llmLearnMoreButtons = document.querySelectorAll('.llm-learn-more');
+            const programDetailsModal = document.getElementById('programDetailsModal');
+            const modalCloseButton = document.querySelector('.modal-close');
+            const modalProgramTitle = document.getElementById('modalProgramTitle');
+            const modalProgramContent = document.getElementById('modalProgramContent');
+            const modalLoadingSpinner = document.getElementById('modalLoadingSpinner');
+
+            llmLearnMoreButtons.forEach(button => {
+                button.addEventListener('click', async function() {
+                    const programName = this.dataset.program;
+                    modalProgramTitle.textContent = programName;
+                    modalProgramContent.innerHTML = ''; // Clear previous content
+                    modalLoadingSpinner.classList.remove('hidden'); // Show spinner
+                    programDetailsModal.style.display = 'flex'; // Show modal
+
+                    let chatHistory = [];
+                    const prompt = `Generate a detailed description and 3-5 key benefits for a "${programName}" program offered by a criminal justice rehabilitation non-profit. Focus on emotional intelligence, self-awareness, positive behavioral change, and community well-being. Make it compelling and concise, suitable for a website.`;
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // Canvas will provide this in runtime
+
+                    try {
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        const result = await response.json();
+
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const text = result.candidates[0].content.parts[0].text;
+                            modalProgramContent.innerHTML = `<p>${text.replace(/\n/g, '<br>')}</p>`; // Use <br> for newlines
+                        } else {
+                            modalProgramContent.innerHTML = '<p class="text-red-600">Failed to load program details. Please try again later.</p>';
+                            console.error('Gemini API response structure unexpected:', result);
+                        }
+                    } catch (error) {
+                        modalProgramContent.innerHTML = '<p class="text-red-600">An error occurred while fetching program details. Please check your network connection.</p>';
+                        console.error('Error calling Gemini API:', error);
+                    } finally {
+                        modalLoadingSpinner.classList.add('hidden'); // Hide spinner
+                    }
+                });
+            });
+
+            // Close modal functionality
+            modalCloseButton.addEventListener('click', () => {
+                programDetailsModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === programDetailsModal) {
+                    programDetailsModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
