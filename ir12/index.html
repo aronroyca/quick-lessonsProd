@@ -16,6 +16,11 @@
             --accent: #4299e1;
             --dark: #1a202c;
             --light: #f7fafc;
+            --bg-light-blue: #EAF4F7;   /* Very pale blue */
+  --bg-light-yellow: #FFFDF0; /* Extremely pale, creamy off-white */
+  --bg-light-gray: #F8F8F8;   /* Very subtle light gray */
+  --section-gradient-blue: linear-gradient(135deg, var(--bg-light-blue), var(--bg-light-gray));
+  --section-gradient-yellow: linear-gradient(135deg, var(--bg-light-yellow), var(--bg-light-gray));
         }
         
         body {
@@ -309,14 +314,14 @@
         </div>
     </div>
 
-    <nav class="fixed w-full header-blur shadow-sm z-50">
+    <nav class="fixed top-0 left-0 right-0 z-50 py-3 shadow-md" style="background-color: var(--bg-light-blue);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="flex items-center text-2xl font-bold">
-                        <div class="logo-mark">IR</div>
-                        <span style="color: var(--primary);">Innovative</span>
-                        <span class="accent-text">Rehab12</span>
+                        <img src="./css/eatLogo.jpeg" alt="Emotional Awareness Talks Logo" class="h-12 w-12 rounded-full object-cover mr-2"> 
+                        <span style="color: var(--primary);">Emotional Awareness</span>
+                        <span class="accent-text">Talks</span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center">
@@ -324,6 +329,7 @@
                         <a href="#home" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Home</a>
                         <a href="#about" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">About</a>
                         <a href="#programs" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Programs</a>
+                        <a href="#events" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Upcoming Event</a>
                         <a href="#testimonials" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Success Stories</a>
                         <a href="#contact" class="nav-link px-3 py-2 font-medium" style="color: var(--text);">Contact</a>
                     </div>
@@ -355,8 +361,7 @@
         </div>
     </div>
 
-    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden" style="background-color: var(--light);">
-        <div class="abstract-shape" style="top: -200px; right: -200px;"></div>
+    <section id="home" class="relative overflow-hidden py-20 md:py-32 flex items-center justify-center text-center" style="background-image: var(--section-gradient-blue);">        <div class="abstract-shape" style="top: -200px; right: -200px;"></div>
         <div class="abstract-shape" style="bottom: -150px; left: -150px; transform: rotate(45deg);"></div>
     
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -364,8 +369,7 @@
                 <div class="mb-12 lg:mb-0 fade-in">
                     <div class="certification-badge">
                         <i class="fas fa-certificate"></i>
-                        <span class="font-medium" style="color: var(--primary);">Trusted by Restorative Justice Leaders</span>
-                    </div>
+                        <span class="font-medium" style="color: var(--primary);">BPH Recognized & Referred Program | Trusted by Restorative Justice Leaders</span>                    </div>
                     <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" style="color: var(--text);">
                         <span class="accent-text">Heal. Grow. Thrive.</span> Building Stronger Communities Through Awareness.
                     </h1>
@@ -415,54 +419,98 @@
             </div>
         </div>
     </section>
-
-    <section id="about" class="py-20 bg-white">
+    <section id="events" class="py-16" style="background-image: var(--section-gradient-yellow);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="badge mb-4">Our Approach</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text);">
-                    Our Core: <span class="accent-text inline-block">Building Resilience</span> and Lasting Change
-                </h2>      
-                <p class="text-lg max-w-3xl mx-auto" style="color: var(--text); opacity: 0.9;">
-                    We champion a holistic path to rehabilitation, rooted in the human capacity for growth. Our BPH-recognized programs empower individuals with essential tools to navigate life's complexities.
+            <div class="text-center mb-12">
+                <span class="badge mb-3">Upcoming Event</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-3" style="color: var(--text);">Breaking Trauma, Rebuilding Emotions</h2>
+                <p class="text-lg max-w-2xl mx-auto" style="color: var(--text); opacity: 0.9;">
+                    A transformative forum for healing and support at San Quentin.
                 </p>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300" style="border: 1px solid rgba(0,0,0,0.05);">
-                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 accent-bg text-white">
-                        <i class="fas fa-gavel text-2xl"></i>
+    
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 md:pr-6 mb-6 md:mb-0">
+                    <img src="./css/saSurvivorForum.jpg" alt="Abstract image representing healing and emotional breakthrough" class="w-full h-auto rounded-lg shadow-md object-cover">
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Restorative Justice & Community Healing</h3>
-                    <p class="opacity-80" style="color: var(--text);">
-                        Our programs drive restorative diversion and rehabilitation. We prioritize healing, accountability, and the vital work of rebuilding families and strengthening communities.
+                <div class="md:w-2/3 text-center md:text-left">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4" style="color: var(--primary);">Sexual Assault Survivor Forum</h3>
+                    <p class="font-semibold mb-2" style="color: var(--text);">Date & Time: <span style="font-weight: normal; opacity: 0.8;">October 16, 2025 | 10:00 AM - 2:45 PM</span></p>
+                    <p class="font-semibold mb-4" style="color: var(--text);">Location: <span style="font-weight: normal; opacity: 0.8;">San Quentin Rehabilitation Center, San Quentin, CA</span></p>
+                    <p class="mb-6 text-base" style="color: var(--text); opacity: 0.9;">
+                        This forum provides a safe space for survivors to engage in trauma-informed dialogue, reflect on impact, dismantle stigmas, and support healing. Participants from both inside and outside the center.
                     </p>
+                    <div class="text-center md:text-left mt-4">
+                        <a href="https://innovativerehab12.org/sexual-assault-survivor-forum/" target="_blank" class="btn accent-bg text-white py-2 px-5 rounded-lg text-base font-semibold hover:bg-opacity-90 transition duration-300">
+                            Details
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300" style="border: 1px solid rgba(0,0,0,0.05);">
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-20" style="background-image: var(--section-gradient-yellow);">                      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="badge mb-4">Our Approach</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text);">Holistic Healing. Lasting <span class="accent-text">Transformation.</span></h2>
+                <p class="text-lg max-w-3xl mx-auto" style="color: var(--text); opacity: 0.9;">
+                    Our evidence-based framework integrates cutting-edge practices with compassionate guidance to foster profound self-awareness and sustainable change.
+                </p>
+            </div>
+    
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
+                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 accent-bg text-white">
+                        <i class="fas fa-hand-holding-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Emotional Empowerment & Community Well-being</h3>
+                    <p class="mb-6 opacity-80" style="color: var(--text);">
+                        Our programs cultivate emotional intelligence and self-awareness, empowering individuals to build stronger relationships and thriving communities.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 accent-text"></i>
+                            <span style="color: var(--text);">Cultivating self-awareness and emotional intelligence</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 accent-text"></i>
+                            <span style="color: var(--text);">Fostering healthy communication and relationships</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 accent-text"></i>
+                            <span style="color: var(--text);">Strengthening individual and community bonds</span>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
                     <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6" style="background-color: var(--secondary); color: white;">
-                        <i class="fas fa-brain text-2xl"></i>
+                        <i class="fas fa-lightbulb text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Cognitive Behavioral Growth</h3>
-                    <p class="opacity-80" style="color: var(--text);">
-                        Utilizing proven cognitive behavioral strategies, we guide participants to transform negative thought patterns into constructive responses, building lasting inner strength.
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Cognitive Strategies for Emotional Mastery</h3>
+                    <p class="mb-6 opacity-80" style="color: var(--text);">
+                        Utilizing proven techniques, we guide participants to transform thought patterns, fostering emotional resilience and empowering them to navigate life with greater well-being.
                     </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition duration-300" style="border: 1px solid rgba(0,0,0,0.05);">
-                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 accent-bg text-white">
-                        <i class="fas fa-user-shield text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Empowering Accountability & Growth</h3>
-                    <p class="opacity-80" style="color: var(--text);">
-                        Our framework cultivates personal responsibility, equipping individuals with essential emotional tools for a positive and stable life trajectory.
-                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 accent-text"></i>
+                            <span style="color: var(--text);">Transforming negative thought patterns</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 accent-text"></i>
+                            <span style="color: var(--text);">Building resilience and adaptive coping skills</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 accent-text"></i>
+                            <span style="color: var(--text);">Empowering self-regulation and inner strength</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="programs" class="py-20" style="background-color: var(--light);">
+    <section id="programs" class="py-20" style="background-image: var(--section-gradient-blue);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="badge mb-4">Our Transformative Programs</span>
@@ -477,8 +525,7 @@
                     <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 border-2" style="border-color: var(--primary); color: var(--primary);">
                         <i class="fas fa-balance-scale text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Restorative Diversion Initiative</h3>
-                    <p class="mb-6 opacity-80" style="color: var(--text);">
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--text);">Emotional Empowerment Initiative</h3>                    <p class="mb-6 opacity-80" style="color: var(--text);">
                         A compassionate alternative to punitive measures, this initiative unites families and communities in a healing, restorative process. We partner with progressive justice systems to foster accountability, growth, and stronger community ties.
                     </p>
                     <ul class="space-y-2 mb-6">
@@ -552,7 +599,7 @@
             </div>
         </div>
     </section>
-    <section id="testimonials" class="py-20 bg-white">
+    <section id="testimonials" class="py-20" style="background-image: var(--section-gradient-yellow);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="badge mb-4">Voices of Transformation</span>
@@ -772,31 +819,20 @@
         </div>
     </section>
 
-<footer class="py-12" style="background-color: var(--dark); color: var(--light);">
+    <footer class="py-12" style="background-color: var(--dark); color: var(--light);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="mb-8 md:mb-0">
-                    <a href="#" class="flex items-center text-2xl font-bold mb-4">
-                        <div class="logo-mark" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">IR</div>
-                        <span style="color: white;">Innovative</span>
-                        <span class="accent-text">Rehab12</span>
+    
+                <!-- Column 1: Logo and Copyright (Revised for proper grid placement and styling) -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <a href="#" class="flex items-center text-2xl font-bold text-white mb-4">
+                        <img src="./css/eatLogo.jpeg" alt="Emotional Awareness Talks Logo" class="h-12 w-12 rounded-full object-cover mr-2"> 
+                        <span>Emotional Awareness Talks</span>
                     </a>
-                    <p class="text-sm mb-6 opacity-80">
-                        Specialized rehabilitation programs focused on cognitive behavioral change and personal growth.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+                    <p class="text-sm opacity-80">&copy; 2025 Emotional Awareness Talks. All rights reserved.</p>
                 </div>
-                
+    
+                <!-- Column 2: Quick Links -->
                 <div>
                     <h3 class="font-semibold text-lg mb-4 text-white">Quick Links</h3>
                     <ul class="space-y-2">
@@ -808,16 +844,18 @@
                     </ul>
                 </div>
                 
+                <!-- Column 3: Programs (Updated with actual program names) -->
                 <div>
-                    <h3 class="font-semibold text-lg mb-4 text-white">Programs</h3>
+                    <h3 class="font-semibold text-lg mb-4 text-white">Our Programs</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Diversion Programs</a></li>
-                        <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Cognitive Behavioral Therapy</a></li>
-                        <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Group Counseling</a></li>
-                        <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Anger Management</a></li>
+                        <li><a href="#programs" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Emotional Empowerment Initiative</a></li>
+                        <li><a href="#programs" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">In-Prison Cognitive Transformation</a></li>
+                        <li><a href="#programs" class="opacity-80 hover:opacity-100 hover:text-white transition duration-300">Youth & Community Healing Circles</a></li>
+                        <!-- Removed "Emotional Awareness Talks" from here as it's the organization name -->
                     </ul>
                 </div>
                 
+                <!-- Column 4: Contact Info (Updated email domain) -->
                 <div>
                     <h3 class="font-semibold text-lg mb-4 text-white">Contact Info</h3>
                     <ul class="space-y-2">
@@ -831,7 +869,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope mr-3 opacity-80 accent-text"></i>
-                            <span class="opacity-80">info@innovativerehab12.com</span>
+                            <span class="opacity-80">info@emotionalawarenesstalks.com</span>
                         </li>
                     </ul>
                 </div>
